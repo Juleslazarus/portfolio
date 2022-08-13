@@ -1,180 +1,228 @@
-/* styles for portfolio website*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
   box-sizing: border-box;
-  font-family: 'Roboto Condensed';
-}
-.mheaderbackground {
-  background-color: #f3efe5; /*middle area background */
-  padding: 300px;  
-}
-.hbackground {
-  background-color: #89af76;/*header sage color */
-}
-.hstyles,
-.navbar,
-.header,
-.navbutton {
-  display: inline-block;
-  color: #f3efe5; 
+  margin: 0px; 
+  padding: 0px; 
   text-decoration: none;
-  letter-spacing: 1px; ;
-}
-.header,
-.navbutton {
-  font-size: 30px; 
-  
-}
-.header {
-  margin-right: 1450px; 
-  font-size: 40px; 
-  margin-left: 70px; 
-  font-weight: 900; 
-}
-.navbutton {
-  padding: 12px; 
-}
-.navbutton:hover {
-  text-decoration: underline;
-  transition: all ease-in-out .2s;
-  background-color: #597c47; /*hover background*/
+  font-family: 'Poppins';
 }
 
-.herotext {
-  color: #f3efe5; 
-  margin-left: 70px; 
-  font-size: 60px; 
-  font-weight: 700; 
+body {
+  background-color: #f3efe5;
 }
-.herosubtext {
+
+.headercontainer {
+  display: grid; 
+  grid-template-columns: repeat(7,auto);
+  grid-template-rows: auto; 
+  grid-template-areas: 
+  "header nhome about projects dont";
+  justify-content: center; /*did this so that the header and nav bar can be placed in the middle and avoid any uneve margins*/
+  background-color: #89af76;
+  border-bottom: inset 4px #f3efe5;
+}
+.headertext {
+  display: flex;
+  grid-area: header;
+  padding: 20px; 
   color: #f3efe5; 
-  margin-top: -30px; 
-  margin-left: 72px;
-  font-size: 30px; 
+  font-size: 20px; 
+}
+.navhomebutton {
+  grid-area: nhome;
+  display: flex; 
+  padding: 20px; 
+  color: #f3efe5; 
+  font-size: 15px; 
   font-weight: 450; 
 }
-.personalimg {
-  display: inline-block; 
-}
-
-.meimg {
-  display: inline-block; 
-  height: auto; 
-  width: 324px; 
-  margin-left: 1000px; 
-  padding-bottom: 46px; 
-  margin-top: -1300px; 
-}
-
-.cgamev1, 
-.cgamev1-1,
-.landingpage {
-  text-decoration: none;
-  color: #597c47; 
-  padding: 12px 20px 12px 20px; 
-  font-size: 20px; 
-     
-}
-.mhero {
-  padding-bottom: 60px; 
-  display: inline-block; 
-}
-.mhero,
-.mherosubtext {
-  display: inline;
-  color: #597c47; /*text color for cream background areas */
-
-}
-.mherotext {
-  font-size: 70px; 
-  font-weight: 800; 
-  margin: -250px 0px 0px 250px; 
-}
-.mherosubtext {
-  font-size: 30px; 
-  font-weight: 500; 
-  margin: -2150px 0px 0px 250px; 
-  
-}
-
-.projects {
-  margin-left: 25%; 
-}
-.cgamev1preview,
-.cgamev1-1preview,
-.toplandingpreview {
-  height: auto; 
-  width: 420px; 
-  padding: 200px 30px 20px 30px;  
-}
-.cgamev1 {
-  margin: 0px 220px 0px -215px; 
-}
-.cgamev1-1 {
-  margin: 0px 270px 0px 0px; f
-}
-.cgamev1:hover,
-.cgamev1-1:hover,
-.landingpage:hover {
-  background-color: #597c47; 
-  color: #f3efe5; 
-}
-
-
-.emailform {
-  height: 100vh; 
-  width: 100%; 
-  background-color: #f3efe5; 
+.navaboutbutton {
+  grid-area: about;
   display: flex; 
+  padding: 20px; 
+  color: #f3efe5; 
+  font-size: 15px;
+  font-weight: 450;  
+}
+.navprojectsbutton {
+  display: flex; 
+  grid-area: projects;
+  padding: 20px; 
+  color: #f3efe5;
+  font-size: 15px;
+  font-weight: 450; 
+}
+.navhomebutton:hover,
+.navaboutbutton:hover, 
+.navprojectsbutton:hover {
+  background-color: #597c47;
+  font-weight: 900; 
+  text-decoration: underline;
+}
+/*styles for index.html begin here*/
+.herocontainer {
+  display: grid; 
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  justify-content: center; 
   align-items: center;
+  background-color: #89af76;
+  padding: 100px; 
+}
+.herotext {
+  font-size: 40px; 
+  font-weight: 900; 
+  color: #f3efe5;
+}
+.herosubtext {
+  font-size: 30px; 
+  color: #f3efe5; 
+  border-bottom: inset 4px; 
+  border-color: #f3efe5; 
+}
+.projectpreviews {
+  display: grid; 
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, auto); 
+  grid-template-areas: 
+  "cgame1"
+  "cgame11"
+  "landing"; 
   justify-content: center;
+  gap: 50px;
+  padding: 15px; 
+}
+.cgamev1wrapper {
+  position: relative;
+  max-width: 950px; 
+}
+.cgamev1img {
+  width: 100%;
+}
+.captiontext {
+  width: 100%; 
+  height: 100%; 
+  position: absolute; 
+  top: 0; left: 0; 
+  text-align: center;
+  padding-top: 20%; 
+  color: white; 
+  background-color: rgba(54,69,46,0.7);
+  opacity: 0; 
+  transition: opacity 0.3s; 
+  font-size: 30px; 
+  font-weight: 900; 
+}
+.cgamev1link {
+  color: white; 
+}
+.cgamev1wrapper>div:hover{
+  opacity: 1;
+  border: 5px solid #89af76; 
+}
+.cgame11wrapper {
+  position: relative; 
+  max-width: 950px; 
+}
+.cgamev11img {
+  width: 100%; 
+}
+.c11captiontext {
+  width: 100%; 
+  height: 100%; 
+  position: absolute;
+  top: 0; left: 0; 
+  text-align: center;
+  padding-top: 20%;
+  color: white; 
+  background-color: rgba(54,69,46,0.7);
+  opacity: 0; 
+  transition: opacity 0.3s; 
+  font-size: 30px; 
+  font-weight: 900; 
+}
+.cgamev11link {
+  color: white; 
+  text-decoration: none;
+}
+.cgame11wrapper>div:hover {
+  opacity: 1; 
+  border: 5px solid #89af76; 
+}
+.landingwrapper {
+  position: relative; 
+  max-width: 950px; 
+}
+.landingimg {
+  width: 100%; 
+}
+.landingcaptiontext {
+  width: 100%; 
+  height: 100%; 
+  position: absolute; 
+  top: 0; left: 0; 
+  padding-top: 20%; 
+  color: white; 
+  background-color: rgba(54,69,46,0.7); 
+  transition: opacity 0.3s; 
+  text-align: center;
+  opacity: 0;
+  font-size: 30px; 
+  font-weight: 900; 
+}
+.landinglink {
+  color: white; 
+}
+.landingwrapper>div:hover {
+  opacity: 1; 
+  border: 5px solid #89af76;
+}
+.footercontainer {
+  background-color: #89af76; 
+  display: grid; 
+  grid-template-columns: repeat(6,auto);
+  justify-content: center;
+  padding: 5px;
+  margin-top: 10px; 
+  gap: 10px; 
 }
 
-.formcontainer {
-  width: 90%; 
-  max-width: 500px; 
-  margin: 0 auto;
-  padding: 20px; 
-  background-color: white;
-  margin-bottom: 30px; 
-  margin-top: -600px; 
+.linkedinimg,
+.githubimg, 
+.instaimg, 
+.tiktokimg {
+  height: auto; 
+  width: 30px; 
+  display: grid;
+
 }
-.form-group {
-  width: 100%; 
-  margin-top: 20px; 
-  font-size: 20px; 
+/*styles for index.html end here*/
+/*styles for about.html start here*/ 
+.aboutmesection{
+  display: flex; 
+  justify-content: start;
+  align-items: center;
+  padding: 100px; 
+  text-decoration: none;
+  color: #34462b;
+
 }
-.form-group input,
-.form-group textarea {
-  width: 100%; 
-  padding: 5px; 
-  font-size: 18px; 
-  border: 1px solid #597c47; 
-  margin-top: 5px; 
+.aboutmetext {
+  font-size: 30px; 
+  color: #34462b;
+  font-weight: 500; 
+  padding: 15px; 
+
 }
-textarea {
-  resize: vertical; 
+.toplink,
+.redditlink {
+  text-decoration: underline;
+  color: #34462b; 
 }
-.submitbutton{
-  width: 100%; 
-  border: none; 
-  outline: none; 
-  padding: 20px; 
-  font-size: 24px; 
-  border-radius: 8px; 
-  color: #f3efe5; 
-  background-color: #89af76;
-  text-align: center;
-  cursor: pointer;
-  margin-top: 10px; 
-  transition: 0.3s ease background-color;
-}
-.submitbutton:hover {
-  background-color: #597c47;
-}
-.form-group input {
-  transition: .3s ease background-color;
-}
-.form-group input:hover {
-  background-color: #89af76;
+.toplink:hover, 
+.redditlink:hover {
+  background-color: #34462b; 
+  padding: 10px;
   color: #f3efe5;
 }
