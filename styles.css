@@ -181,7 +181,7 @@ body {
 .footercontainer {
   background-color: #89af76; 
   display: grid; 
-  grid-template-columns: repeat(6,auto);
+  grid-template-columns: repeat(7,auto);
   justify-content: center;
   padding: 5px;
   margin-top: 10px; 
@@ -191,7 +191,8 @@ body {
 .linkedinimg,
 .githubimg, 
 .instaimg, 
-.tiktokimg {
+.tiktokimg,
+.gmailimg {
   height: auto; 
   width: 30px; 
   display: grid;
